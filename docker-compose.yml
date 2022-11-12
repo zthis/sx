@@ -1,6 +1,7 @@
 services:
   sx:
-    image: ghcr.io/yellowhat/searx
+    #image: ghcr.io/yellowhat/searx
+    build: .
     restart: unless-stopped
     ports:
       - 8080:8080
