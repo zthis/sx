@@ -26,7 +26,7 @@ server:
     bind_address: "127.0.0.1" # address to listen on
     secret_key: "ultrasecretkey" # change this!
     base_url: False # Set custom base_url. Possible values: False or "https://your.custom.host/location/"
-    image_proxy: True # Proxying image results through searx
+    image_proxy: False # Proxying image results through searx
     http_protocol_version: "1.0"  # 1.0 and 1.1 are supported
     method: "POST" # POST queries are more secure as they don't show up in history but may cause problems when using Firefox containers
     default_http_headers:
@@ -43,7 +43,7 @@ ui:
     default_locale: "" # Default interface locale - leave blank to detect from browser information or use codes from the 'locales' config section
     results_on_new_tab: True # Open result links in a new tab by default
     theme_args:
-        oscar_style: logicodev # default style of oscar
+        oscar_style: logicodev-dark # default style of oscar
 
 outgoing: # communication with search engines
     request_timeout: 3.0 # default timeout in seconds, can be override by engine
