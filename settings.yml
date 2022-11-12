@@ -19,14 +19,15 @@ search:
     default_lang : "" # Default search language - leave blank to detect from browser information or use codes from 'languages.py'
     ban_time_on_fail : 5 # ban time in seconds after engine errors
     max_ban_time_on_fail : 120 # max ban time in seconds after engine errors
-    prefer_configured_language: False # increase weight of results in configured language in ranking
+#    prefer_configured_language: False # increase weight of results in configured language in ranking
 
 server:
     port : 8888
-    bind_address : "127.0.0.1" # address to listen on
+    bind_address : "0.0.0.0" # address to listen on
     secret_key : "ultrasecretkey" # change this!
     base_url : False # Set custom base_url. Possible values: False or "https://your.custom.host/location/"
-    image_proxy : True # Proxying image results through searx
+#    image_proxy : False # Proxying image results through searx
+    image_proxy: True # Proxying image results through searx
     http_protocol_version : "1.0"  # 1.0 and 1.1 are supported
     method: "POST" # POST queries are more secure as they don't show up in history but may cause problems when using Firefox containers
     default_http_headers:
@@ -44,8 +45,8 @@ ui:
     default_theme : oscar # ui theme
     default_locale : "" # Default interface locale - leave blank to detect from browser information or use codes from the 'locales' config section
     theme_args :
-        oscar_style : pointhi # default style of oscar
-   results_on_new_tab: True  # Open result links in a new tab by default
+        oscar_style : logicodev # default style of oscar
+#   results_on_new_tab: False  # Open result links in a new tab by default
 #   categories_order :
 #     - general
 #     - files
@@ -77,7 +78,6 @@ outgoing: # communication with search engines
     pool_connections : 100 # Number of different hosts
     pool_maxsize : 20 # Number of simultaneous requests by host
     enable_http2: True  # See https://www.python-httpx.org/http2/
-
 # uncomment below section if you want to use a proxy
 # see https://2.python-requests.org/en/latest/user/advanced/#proxies
 # SOCKS proxies are also supported: see https://2.python-requests.org/en/latest/user/advanced/#socks
@@ -106,7 +106,7 @@ outgoing: # communication with search engines
 
 # uncomment below section if you want to configure which plugin is enabled by default
 #
- enabled_plugins:
+enabled_plugins:
    - "HTTPS rewrite"
    - "Infinite scroll"
    - "Self Information"
@@ -116,13 +116,20 @@ outgoing: # communication with search engines
 # Example to rewrite hostnames in external links
 #
 # enabled_plugins:
-   - 'Hostname replace'
+#   - 'Hostname replace'
  hostname_replace:
    '(.*\.)?youtube\.com$': "piped.kavin.rocks"
    '(.*\.)?youtu\.be$': "piped.kavin.rocks"
    '(.*\.)?reddit\.com$': "teddit.net"
    '(.*\.)?redd\.it$': "teddit.net"
    '(www\.)?twitter\.com$': "nitter.net"
+
+#   '(.*\.)?youtube\.com$':           'invidious.example.com'
+#   '(.*\.)?youtu\.be$':              'invidious.example.com'
+#   '(.*\.)?youtube-noocookie\.com$': 'yotter.example.com'
+#   '(.*\.)?reddit\.com$':            'teddit.example.com'
+#   '(.*\.)?redd\.it$':               'teddit.example.com'
+#   '(www\.)?twitter\.com$':          'nitter.example.com'
 
 checker:
     # disable checker when in debug mode
