@@ -1,10 +1,10 @@
-FROM alpine:3.16.2
+FROM alpine:latest
 ENTRYPOINT ["/sbin/tini", "--", "/usr/local/searx/dockerfiles/docker-entrypoint.sh"]
 EXPOSE 8080
 VOLUME /etc/searx
 VOLUME /var/log/uwsgi
 
-ENV INSTANCE_NAME=searx \
+ENV INSTANCE_NAME=sx \
     SEARX_SETTINGS_PATH=/etc/searx/settings.yml \
     UWSGI_SETTINGS_PATH=/etc/searx/uwsgi.ini \
     CWD=/usr/local/searx
