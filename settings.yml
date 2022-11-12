@@ -23,7 +23,7 @@ search:
 
 server:
     port : 8888
-    bind_address : "0.0.0.0" # address to listen on
+    bind_address : "127.0.0.1" # address to listen on
     secret_key : "ultrasecretkey" # change this!
     base_url : False # Set custom base_url. Possible values: False or "https://your.custom.host/location/"
     image_proxy : False # Proxying image results through searx
@@ -37,8 +37,8 @@ server:
         Referrer-Policy : no-referrer
 
 ui:
-    autofocus : True # Autofocus search input
-    archive_today : False # show archive.today links
+    #autofocus : True # Autofocus search input
+    #archive_today : False # show archive.today links
     static_path : "" # Custom static path - leave it blank if you didn't change
     templates_path : "" # Custom templates path - leave it blank if you didn't change
     default_theme : oscar # ui theme
