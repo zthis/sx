@@ -4,7 +4,7 @@ name: Container
 on:
   workflow_dispatch:
   schedule:
-    - cron: '05 20 * * *'
+    - cron: '05 19 * * *'
 
 env:
   REGISTRY: ghcr.io
